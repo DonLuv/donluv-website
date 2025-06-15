@@ -2,7 +2,12 @@ import { useState } from 'react'
 import { useAccount, useConnect, useDisconnect, useSignMessage } from 'wagmi'
 import { SiweMessage } from 'siwe'
 import { Button } from './ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu'
 
 export function WalletConnect() {
   const { address, isConnected } = useAccount()
@@ -34,8 +39,6 @@ export function WalletConnect() {
         { message: messageToSign },
         {
           onSuccess: signature => {
-            // Here you would typically verify the signature on your backend
-            // For now, we'll just set authenticated to true
             setIsAuthenticated(true)
             console.log('SIWE authentication successful', {
               message: messageToSign,
@@ -61,49 +64,46 @@ export function WalletConnect() {
 
   if (isConnected && address) {
     return (
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            Wallet Connected
-            {isAuthenticated && <span className="text-green-500 text-sm">✓ Authenticated</span>}
-          </CardTitle>
-          <CardDescription>
-            {address.slice(0, 6)}...{address.slice(-4)}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-2">
-          {!isAuthenticated && (
-            <Button onClick={handleSiweAuth} className="w-full" disabled={isAuthenticating}>
-              {isAuthenticating ? 'Signing...' : 'Sign In with Ethereum'}
+      <div className="flex items-center gap-2">
+        {isAuthenticated && <span className="text-xs text-green-500 hidden sm:inline">✓</span>}
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="sm">
+              {address.slice(0, 6)}...{address.slice(-4)}
             </Button>
-          )}
-          <Button onClick={handleDisconnect} variant="outline" className="w-full">
-            Disconnect
-          </Button>
-        </CardContent>
-      </Card>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {!isAuthenticated && (
+              <DropdownMenuItem onClick={handleSiweAuth} disabled={isAuthenticating}>
+                {isAuthenticating ? 'Signing...' : 'Sign In with Ethereum'}
+              </DropdownMenuItem>
+            )}
+            <DropdownMenuItem onClick={handleDisconnect}>Disconnect</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     )
   }
 
   return (
-    <Card className="w-full max-w-md">
-      <CardHeader>
-        <CardTitle>Connect Wallet</CardTitle>
-        <CardDescription>Choose a wallet to connect to donluv.xyz</CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-2">
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="sm" disabled={isPending}>
+          Connect Wallet
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
         {connectors.map(connector => (
-          <Button
+          <DropdownMenuItem
             key={connector.uid}
             onClick={() => connect({ connector })}
             disabled={isPending}
-            variant="outline"
-            className="w-full justify-start"
           >
             {connector.name}
-          </Button>
+          </DropdownMenuItem>
         ))}
-      </CardContent>
-    </Card>
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }

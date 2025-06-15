@@ -33,13 +33,13 @@ export function Header() {
             >
               Home
             </Link>
-            {/*<Link*/}
-            {/*    to="/projects"*/}
-            {/*    className="text-sm font-medium transition-colors hover:text-primary [&.active]:text-primary"*/}
-            {/*    activeProps={{ className: "text-primary" }}*/}
-            {/*>*/}
-            {/*    Projects*/}
-            {/*</Link>*/}
+            <Link
+              to="/projects"
+              className="text-sm font-medium transition-colors hover:text-primary [&.active]:text-primary"
+              activeProps={{ className: 'text-primary' }}
+            >
+              Projects
+            </Link>
             <Link
               to="/about"
               className="text-sm font-medium transition-colors hover:text-primary [&.active]:text-primary"
@@ -66,13 +66,13 @@ export function Header() {
             >
               Home
             </Link>
-            {/*<Link*/}
-            {/*    to="/projects"*/}
-            {/*    className="text-sm font-medium transition-colors hover:text-primary [&.active]:text-primary"*/}
-            {/*    activeProps={{ className: "text-primary" }}*/}
-            {/*>*/}
-            {/*    Projects*/}
-            {/*</Link>*/}
+            <Link
+              to="/projects"
+              className="text-sm font-medium transition-colors hover:text-primary [&.active]:text-primary"
+              activeProps={{ className: 'text-primary' }}
+            >
+              Projects
+            </Link>
             <Link
               to="/about"
               className="text-sm font-medium transition-colors hover:text-primary [&.active]:text-primary"

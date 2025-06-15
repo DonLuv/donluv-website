@@ -1,35 +1,17 @@
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { Header } from '../components/layout/Header'
+import { Footer } from '../components/layout/Footer'
 
 export const Route = createRootRoute({
-  component: RootComponent,
+  component: () => (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Outlet />
+      </main>
+      <Footer />
+      {process.env.NODE_ENV === 'development' && <TanStackRouterDevtools />}
+    </div>
+  ),
 })
-
-function RootComponent() {
-  return (
-    <>
-      <div className="p-2 flex gap-2 text-lg">
-        <Link
-          to="/"
-          activeProps={{
-            className: 'font-bold',
-          }}
-          activeOptions={{ exact: true }}
-        >
-          Home
-        </Link>{' '}
-        <Link
-          to="/about"
-          activeProps={{
-            className: 'font-bold',
-          }}
-        >
-          About
-        </Link>
-      </div>
-      <hr />
-      <Outlet />
-      <TanStackRouterDevtools position="bottom-right" />
-    </>
-  )
-}

@@ -29,17 +29,17 @@ export function Footer() {
             <h4 className="text-sm font-semibold">Projects</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link to="/project/pizzadao" className="hover:text-primary transition-colors">
+                <Link to="/projects/pizzadao" className="hover:text-primary transition-colors">
                   PizzaDAO
                 </Link>
               </li>
               <li>
-                <Link to="/project/frogland" className="hover:text-primary transition-colors">
+                <Link to="/projects/frogland" className="hover:text-primary transition-colors">
                   Frogland
                 </Link>
               </li>
               <li>
-                <Link to="/project/bittrees" className="hover:text-primary transition-colors">
+                <Link to="/projects/bittrees" className="hover:text-primary transition-colors">
                   Bittrees
                 </Link>
               </li>

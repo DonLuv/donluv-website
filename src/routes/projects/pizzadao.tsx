@@ -10,7 +10,7 @@ function PizzaDAOProject() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-6 mb-8">
-            <div className="w-20 h-20 cut-corner bg-primary/20 border-2 border-primary flex items-center justify-center glow-border">
+            <div className="w-20 h-20 cut-corner border-2 border-primary flex items-center justify-center glow-border bg-primary/20 text-primary">
               <span className="text-4xl">🍕</span>
             </div>
             <div>
@@ -22,7 +22,7 @@ function PizzaDAOProject() {
           </div>
 
           <div className="space-y-8">
-            <div className="cut-corner border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border">
+            <div className="cut-corner-lg border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border text-primary">
               <h2 className="text-2xl font-bold mb-4 text-primary font-mono terminal-glow">
                 SYSTEM_OVERVIEW.txt
               </h2>
@@ -33,7 +33,7 @@ function PizzaDAOProject() {
               </p>
             </div>
 
-            <div className="cut-corner border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border">
+            <div className="cut-corner-lg border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border text-primary">
               <h2 className="text-2xl font-bold mb-6 text-primary font-mono terminal-glow">
                 CONTRIBUTION_LOG.dat
               </h2>
@@ -77,7 +77,7 @@ function PizzaDAOProject() {
               </div>
             </div>
 
-            <div className="cut-corner border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border">
+            <div className="cut-corner-lg border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border text-primary">
               <h2 className="text-2xl font-bold mb-6 text-primary font-mono terminal-glow">
                 TECH_STACK.cfg
               </h2>
@@ -85,7 +85,7 @@ function PizzaDAOProject() {
                 {['Solidity', 'React', 'Web3.js', 'IPFS', 'Governance', 'TypeScript'].map(tech => (
                   <div
                     key={tech}
-                    className="cut-corner bg-primary/10 border border-primary px-4 py-3 text-center font-mono terminal-glow text-primary"
+                    className="cut-corner-sm bg-primary/10 border border-primary px-4 py-3 text-center font-mono terminal-glow text-primary"
                   >
                     {tech.toUpperCase()}
                   </div>
@@ -93,7 +93,7 @@ function PizzaDAOProject() {
               </div>
             </div>
 
-            <div className="cut-corner border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border">
+            <div className="cut-corner-lg border-2 border-primary/50 bg-card/90 backdrop-blur p-8 glow-border text-primary">
               <h2 className="text-2xl font-bold mb-6 text-primary font-mono terminal-glow">
                 IMPACT_ANALYSIS.log
               </h2>
@@ -105,7 +105,7 @@ function PizzaDAOProject() {
               </p>
             </div>
 
-            <div className="cut-corner border-2 border-accent/50 bg-accent/5 backdrop-blur p-6 glow-border">
+            <div className="cut-corner border-2 border-accent/50 bg-accent/5 backdrop-blur p-6 glow-border text-accent">
               <h3 className="text-lg font-semibold text-accent mb-3 font-mono terminal-glow">
                 🚧 MODULE_STATUS.sys
               </h3>

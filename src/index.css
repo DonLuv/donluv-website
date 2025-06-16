@@ -40,32 +40,86 @@
 
 /* Custom PCB Styling */
 @layer components {
-  /* Cut corner effect - bottom right folded like paper */
+  /* Small cut corner - for buttons and small elements */
+  .cut-corner-sm {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
+  }
+
+  .cut-corner-sm::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 14px; /* Slightly shorter to stay inside the cut */
+    height: 2px;
+    background: #00ff88;
+    box-shadow: 0 0 4px #00ff88;
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Medium cut corner - for cards */
   .cut-corner {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), calc(100% - 48px) 100%, 0 100%);
+  }
+
+  .cut-corner::before {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 28px; /* Slightly shorter to stay inside the cut */
+    height: 2px;
+    background: #00ff88;
+    box-shadow: 0 0 4px #00ff88;
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Large cut corner - for big content areas */
+  .cut-corner-lg {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 72px), calc(100% - 72px) 100%, 0 100%);
+  }
+
+  .cut-corner-lg::before {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 36px; /* Slightly shorter to stay inside the cut */
+    height: 2px;
+    background: #00ff88;
+    box-shadow: 0 0 4px #00ff88;
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+    z-index: 1;
+    pointer-events: none;
   }
 
   /* Alternative cut corner with visible fold line */
   .cut-corner-border {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
   }
 
   .cut-corner-border::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(
-      -45deg,
-      transparent 46%,
-      rgba(0, 255, 136, 0.3) 46%,
-      rgba(0, 255, 136, 0.3) 54%,
-      transparent 54%
-    );
+    bottom: 4px;
+    right: 4px;
+    width: 28px;
+    height: 2px;
+    background: #00ff88;
+    box-shadow: 0 0 4px #00ff88;
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
     z-index: 1;
     pointer-events: none;
   }

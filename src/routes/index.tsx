@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
+import { Terminal } from '../components/Terminal'
+import { CircuitBoard } from '../components/CircuitBoard'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -7,9 +9,9 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto text-center space-y-12">
+      <div className="max-w-6xl mx-auto space-y-12">
         {/* Hero Section */}
-        <div className="space-y-6">
+        <div className="text-center space-y-6">
           <h1 className="text-4xl font-bold tracking-tight lg:text-6xl">
             Hey, I'm{' '}
             <span
@@ -25,14 +27,21 @@ function Index() {
             </span>
           </h1>
           <p className="text-xl leading-8 text-muted-foreground max-w-2xl mx-auto">
-            Web3 builder focused on infrastructure, DAOs, and the metaverse. Early contributor to
-            PizzaDAO, co-founder of Frogland, and core dev at Bittrees.
+            Web3 builder focused on infrastructure, DAOs, and the metaverse. Explore my projects
+            using the terminal or circuit board below.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          <Link to="/projects/pizzadao" className="hover:text-primary transition-colors">
+        {/* Interactive Project Explorer */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          <Terminal />
+          <CircuitBoard />
+        </div>
+
+        {/* Traditional Project Cards (Fallback/Alternative) */}
+        <div className="pt-8">
+          <h2 className="text-2xl font-bold text-center mb-8">Or browse traditionally</h2>
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="group p-8 border rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex items-center justify-center">
@@ -44,15 +53,16 @@ function Index() {
                   revolution
                 </p>
                 <div className="pt-2">
-                  <span className="text-sm font-medium text-orange-600 dark:text-orange-400">
-                    Contributor →
-                  </span>
+                  <a
+                    href="/projects/pizzadao"
+                    className="text-sm font-medium text-orange-600 dark:text-orange-400 hover:underline"
+                  >
+                    Learn more →
+                  </a>
                 </div>
               </div>
             </div>
-          </Link>
 
-          <Link to="/projects/frogland" className="hover:text-primary transition-colors">
             <div className="group p-8 border rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
@@ -64,15 +74,16 @@ function Index() {
                   implementation
                 </p>
                 <div className="pt-2">
-                  <span className="text-sm font-medium text-green-600 dark:text-green-400">
-                    Co-founder →
-                  </span>
+                  <a
+                    href="/projects/frogland"
+                    className="text-sm font-medium text-green-600 dark:text-green-400 hover:underline"
+                  >
+                    Learn more →
+                  </a>
                 </div>
               </div>
             </div>
-          </Link>
 
-          <Link to="/projects/bittrees" className="hover:text-primary transition-colors">
             <div className="group p-8 border rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
@@ -84,20 +95,16 @@ function Index() {
                   factory patterns
                 </p>
                 <div className="pt-2">
-                  <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                    Core Dev →
-                  </span>
+                  <a
+                    href="/projects/bittrees"
+                    className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    Learn more →
+                  </a>
                 </div>
               </div>
             </div>
-          </Link>
-        </div>
-
-        {/* CTA Section */}
-        <div className="pt-8">
-          <p className="text-lg text-muted-foreground">
-            Connect your wallet above to access exclusive content and interact with the projects.
-          </p>
+          </div>
         </div>
       </div>
     </div>

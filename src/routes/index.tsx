@@ -46,9 +46,9 @@ function Index() {
               Or browse traditionally
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="group cut-corner border-2 border-primary/50 bg-card pcb-hover glow-border">
+              <div className="group cut-corner border-2 border-primary/50 bg-card pcb-hover glow-border text-primary">
                 <div className="p-8 space-y-4">
-                  <div className="w-12 h-12 bg-primary/20 border border-primary cut-corner flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary/20 border border-primary cut-corner-sm flex items-center justify-center text-primary">
                     <span className="text-2xl">🍕</span>
                   </div>
                   <h3 className="text-xl font-semibold text-primary terminal-glow">PizzaDAO</h3>
@@ -67,9 +67,9 @@ function Index() {
                 </div>
               </div>
 
-              <div className="group cut-corner border-2 border-primary/50 bg-card pcb-hover glow-border">
+              <div className="group cut-corner border-2 border-primary/50 bg-card pcb-hover glow-border text-primary">
                 <div className="p-8 space-y-4">
-                  <div className="w-12 h-12 bg-primary/20 border border-primary cut-corner flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary/20 border border-primary cut-corner-sm flex items-center justify-center text-primary">
                     <span className="text-2xl">🐸</span>
                   </div>
                   <h3 className="text-xl font-semibold text-primary terminal-glow">Frogland</h3>
@@ -88,9 +88,9 @@ function Index() {
                 </div>
               </div>
 
-              <div className="group cut-corner border-2 border-primary/50 bg-card pcb-hover glow-border">
+              <div className="group cut-corner border-2 border-primary/50 bg-card pcb-hover glow-border text-primary">
                 <div className="p-8 space-y-4">
-                  <div className="w-12 h-12 bg-primary/20 border border-primary cut-corner flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary/20 border border-primary cut-corner-sm flex items-center justify-center text-primary">
                     <span className="text-2xl">🌳</span>
                   </div>
                   <h3 className="text-xl font-semibold text-primary terminal-glow">Bittrees</h3>

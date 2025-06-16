@@ -162,13 +162,13 @@ export function Terminal() {
   }, [lines])
 
   return (
-    <div className="cut-corner border-2 border-primary bg-card/90 backdrop-blur-sm glow-border">
+    <div className="cut-corner-lg border-2 border-primary bg-card/90 backdrop-blur-sm glow-border text-primary">
       {/* Terminal Header */}
       <div className="border-b border-primary/50 px-4 py-3 flex items-center gap-3">
         <div className="flex gap-2">
-          <div className="w-3 h-3 cut-corner bg-destructive border border-destructive"></div>
-          <div className="w-3 h-3 cut-corner bg-yellow-500 border border-yellow-400"></div>
-          <div className="w-3 h-3 cut-corner bg-primary border border-primary"></div>
+          <div className="w-3 h-3 cut-corner-sm bg-destructive border border-destructive text-destructive"></div>
+          <div className="w-3 h-3 cut-corner-sm bg-yellow-500 border border-yellow-400 text-yellow-400"></div>
+          <div className="w-3 h-3 cut-corner-sm bg-primary border border-primary text-primary"></div>
         </div>
         <span className="text-sm font-mono terminal-glow text-primary">DONLUV_TERMINAL_v3.14</span>
       </div>

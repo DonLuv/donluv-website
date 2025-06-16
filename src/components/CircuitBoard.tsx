@@ -44,7 +44,7 @@ export function CircuitBoard() {
   }
 
   return (
-    <div className="cut-corner border-2 border-primary bg-card/90 backdrop-blur-sm glow-border">
+    <div className="cut-corner-lg border-2 border-primary bg-card/90 backdrop-blur-sm glow-border text-primary">
       <div className="border-b border-primary/50 px-4 py-3">
         <h3 className="text-primary font-mono font-semibold terminal-glow">PCB_INTERFACE_v2.1</h3>
       </div>
@@ -54,7 +54,7 @@ export function CircuitBoard() {
           width="400"
           height="240"
           viewBox="0 0 400 240"
-          className="w-full h-auto border-2 border-primary/30 cut-corner bg-background/50"
+          className="w-full h-auto border-2 border-primary/30 cut-corner bg-background/50 text-primary"
         >
           {/* Background PCB Pattern */}
           <defs>

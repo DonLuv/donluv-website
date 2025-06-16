@@ -76,15 +76,12 @@ export function WalletConnect() {
             <Button
               variant="outline"
               size="sm"
-              className="cut-corner border-primary hover:bg-primary/10 font-mono text-xs terminal-glow"
+              className="border-primary hover:bg-primary/10 font-mono text-xs terminal-glow"
             >
               {address.slice(0, 6)}...{address.slice(-4)}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            className="cut-corner border-primary bg-card/95 backdrop-blur"
-          >
+          <DropdownMenuContent align="end" className="border-primary bg-card/95 backdrop-blur">
             {!isAuthenticated && (
               <DropdownMenuItem
                 onClick={handleSiweAuth}
@@ -113,15 +110,12 @@ export function WalletConnect() {
           variant="outline"
           size="sm"
           disabled={isPending}
-          className="cut-corner border-primary hover:bg-primary/10 font-mono text-xs terminal-glow"
+          className="border-primary hover:bg-primary/10 font-mono text-xs terminal-glow"
         >
           {isPending ? 'CONNECTING...' : 'CONNECT_WALLET'}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="end"
-        className="cut-corner border-primary bg-card/95 backdrop-blur"
-      >
+      <DropdownMenuContent align="end" className="border-primary bg-card/95 backdrop-blur">
         {connectors.map(connector => (
           <DropdownMenuItem
             key={connector.uid}

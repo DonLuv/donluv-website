@@ -25,7 +25,7 @@ export function WalletConnect() {
       const message = new SiweMessage({
         domain: window.location.host,
         address: address,
-        statement: 'Sign in to donluv.xyz',
+        statement: 'AUTHENTICATE TO DONLUV_SYSTEM',
         uri: window.location.origin,
         version: '1',
         chainId: 1,
@@ -40,18 +40,18 @@ export function WalletConnect() {
         {
           onSuccess: signature => {
             setIsAuthenticated(true)
-            console.log('SIWE authentication successful', {
+            console.log('AUTHENTICATION SUCCESSFUL', {
               message: messageToSign,
               signature,
             })
           },
           onError: error => {
-            console.error('SIWE authentication failed', error)
+            console.error('AUTHENTICATION FAILED', error)
           },
         }
       )
     } catch (error) {
-      console.error('Error during SIWE auth:', error)
+      console.error('AUTH ERROR:', error)
     } finally {
       setIsAuthenticating(false)
     }
@@ -65,21 +65,41 @@ export function WalletConnect() {
   if (isConnected && address) {
     return (
       <div className="flex items-center gap-2">
-        {isAuthenticated && <span className="text-xs text-green-500 hidden sm:inline">✓</span>}
+        {isAuthenticated && (
+          <span className="text-xs text-primary hidden sm:inline terminal-glow font-mono">
+            AUTH_OK
+          </span>
+        )}
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="sm">
+            <Button
+              variant="outline"
+              size="sm"
+              className="cut-corner border-primary hover:bg-primary/10 font-mono text-xs terminal-glow"
+            >
               {address.slice(0, 6)}...{address.slice(-4)}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent
+            align="end"
+            className="cut-corner border-primary bg-card/95 backdrop-blur"
+          >
             {!isAuthenticated && (
-              <DropdownMenuItem onClick={handleSiweAuth} disabled={isAuthenticating}>
-                {isAuthenticating ? 'Signing...' : 'Sign In with Ethereum'}
+              <DropdownMenuItem
+                onClick={handleSiweAuth}
+                disabled={isAuthenticating}
+                className="font-mono text-xs hover:bg-primary/10 focus:bg-primary/10"
+              >
+                {isAuthenticating ? 'AUTHENTICATING...' : 'AUTHENTICATE_WALLET'}
               </DropdownMenuItem>
             )}
-            <DropdownMenuItem onClick={handleDisconnect}>Disconnect</DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={handleDisconnect}
+              className="font-mono text-xs hover:bg-destructive/10 focus:bg-destructive/10 text-destructive"
+            >
+              DISCONNECT_WALLET
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -89,18 +109,27 @@ export function WalletConnect() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" disabled={isPending}>
-          Connect Wallet
+        <Button
+          variant="outline"
+          size="sm"
+          disabled={isPending}
+          className="cut-corner border-primary hover:bg-primary/10 font-mono text-xs terminal-glow"
+        >
+          {isPending ? 'CONNECTING...' : 'CONNECT_WALLET'}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent
+        align="end"
+        className="cut-corner border-primary bg-card/95 backdrop-blur"
+      >
         {connectors.map(connector => (
           <DropdownMenuItem
             key={connector.uid}
             onClick={() => connect({ connector })}
             disabled={isPending}
+            className="font-mono text-xs hover:bg-primary/10 focus:bg-primary/10"
           >
-            {connector.name}
+            CONNECT_{connector.name.toUpperCase()}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

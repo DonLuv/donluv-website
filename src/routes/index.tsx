@@ -33,7 +33,9 @@ function Index() {
               using the terminal or circuit board below.
             </p>
           </div>
-
+          <h2 className="text-2xl font-bold text-center mb-8 terminal-glow">
+            Authenticate as Zero Cool
+          </h2>
           {/* Interactive Project Explorer */}
           <div className="grid lg:grid-cols-2 gap-8">
             <Terminal />
@@ -43,7 +45,7 @@ function Index() {
           {/* Traditional Project Cards (Fallback/Alternative) */}
           <div className="pt-8">
             <h2 className="text-2xl font-bold text-center mb-8 terminal-glow">
-              Or browse traditionally
+              Or Brute Force Access via Crash Override
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="group cut-corner border-2 border-primary/50 bg-card pcb-hover glow-border text-primary">

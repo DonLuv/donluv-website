@@ -2,45 +2,56 @@ import { Link } from '@tanstack/react-router'
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t-2 border-primary/30 bg-background/90 backdrop-blur">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-3">
             <h3
-              className="text-lg font-semibold"
+              className="text-lg font-semibold font-mono terminal-glow"
               style={{
-                background: 'linear-gradient(to right, #9333ea, #db2777)',
+                background: 'linear-gradient(to right, #00ff88, #39ff14)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 color: 'transparent',
               }}
             >
-              donluv
+              donluv.sys
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground font-mono">
               Web3 builder focused on infrastructure, DAOs, and the metaverse.
             </p>
           </div>
 
           {/* Projects */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Projects</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold font-mono text-primary terminal-glow">
+              PROJECTS.dir
+            </h4>
+            <ul className="space-y-2 text-sm text-muted-foreground font-mono">
               <li>
-                <Link to="/projects/pizzadao" className="hover:text-primary transition-colors">
-                  PizzaDAO
+                <Link
+                  to="/projects/pizzadao"
+                  className="hover:text-primary transition-colors terminal-glow"
+                >
+                  {'>'} pizzadao_module
                 </Link>
               </li>
               <li>
-                <Link to="/projects/frogland" className="hover:text-primary transition-colors">
-                  Frogland
+                <Link
+                  to="/projects/frogland"
+                  className="hover:text-primary transition-colors terminal-glow"
+                >
+                  {'>'} frogland_module
                 </Link>
               </li>
               <li>
-                <Link to="/projects/bittrees" className="hover:text-primary transition-colors">
-                  Bittrees
+                <Link
+                  to="/projects/bittrees"
+                  className="hover:text-primary transition-colors terminal-glow"
+                >
+                  {'>'} bittrees_module
                 </Link>
               </li>
             </ul>
@@ -48,21 +59,23 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Navigation</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold font-mono text-primary terminal-glow">
+              NAVIGATION.sys
+            </h4>
+            <ul className="space-y-2 text-sm text-muted-foreground font-mono">
               <li>
-                <Link to="/" className="hover:text-primary transition-colors">
-                  Home
+                <Link to="/" className="hover:text-primary transition-colors terminal-glow">
+                  {'>'} home.exe
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="hover:text-primary transition-colors">
-                  Projects
+                <Link to="/projects" className="hover:text-primary transition-colors terminal-glow">
+                  {'>'} projects.dir
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-primary transition-colors">
-                  About
+                <Link to="/about" className="hover:text-primary transition-colors terminal-glow">
+                  {'>'} about.txt
                 </Link>
               </li>
             </ul>
@@ -70,16 +83,18 @@ export function Footer() {
 
           {/* Connect */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Connect</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold font-mono text-primary terminal-glow">
+              CONNECT.net
+            </h4>
+            <ul className="space-y-2 text-sm text-muted-foreground font-mono">
               <li>
                 <a
                   href="https://github.com/donluv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors terminal-glow"
                 >
-                  GitHub
+                  {'>'} github.com/donluv
                 </a>
               </li>
               <li>
@@ -87,9 +102,9 @@ export function Footer() {
                   href="https://twitter.com/donluv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors terminal-glow"
                 >
-                  Twitter
+                  {'>'} x.com/donluv
                 </a>
               </li>
               <li>
@@ -97,9 +112,9 @@ export function Footer() {
                   href="https://discord.gg/donluv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors terminal-glow"
                 >
-                  Discord
+                  {'>'} discord.gg/donluv
                 </a>
               </li>
             </ul>
@@ -107,8 +122,10 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} donluv. Built with React, TypeScript, and Web3.</p>
+        <div className="mt-8 pt-6 border-t border-primary/20 text-center text-sm text-muted-foreground font-mono">
+          <p className="terminal-glow">
+            © {new Date().getFullYear()} DONLUV_SYSTEM // Built with React + TypeScript + Web3 + 💚
+          </p>
         </div>
       </div>
     </footer>

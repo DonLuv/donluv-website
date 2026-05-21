@@ -43,7 +43,7 @@
   /* Small cut corner - for buttons and small elements */
   .cut-corner-sm {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
   }
 
   .cut-corner-sm::before {
@@ -64,7 +64,7 @@
   /* Medium cut corner - for cards */
   .cut-corner {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), calc(100% - 48px) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
   }
 
   .cut-corner::before {
@@ -85,7 +85,7 @@
   /* Large cut corner - for big content areas */
   .cut-corner-lg {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 72px), calc(100% - 72px) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0 100%);
   }
 
   .cut-corner-lg::before {
@@ -124,12 +124,44 @@
     pointer-events: none;
   }
 
-  /* PCB trace lines */
+  /* PCB trace lines - original simple version */
   .pcb-traces {
     background-image:
       linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px),
       linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
+  }
+
+  /* New PCB pattern - responsive sizing with seamless tiling fix */
+  .pcb-pattern {
+    position: relative;
+  }
+
+  .pcb-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/background-pcb-pattern.svg') repeat;
+    background-size: 40vw 38vw; /* Even more height compression */
+    background-position: 0 -1vw; /* Shift pattern up slightly */
+    image-rendering: crisp-edges;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Adjust pattern size for different screen sizes */
+  @media (max-width: 768px) {
+    .pcb-pattern::before {
+      background-size: 60vw 59vw; /* Different height ratio on mobile */
+      opacity: 0.1;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .pcb-pattern::before {
+      background-size: 25vw 24vw; /* Different height ratio on large screens */
+    }
   }
 
   /* Glowing green border effect */

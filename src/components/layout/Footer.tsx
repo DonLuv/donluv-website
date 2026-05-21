@@ -104,7 +104,17 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors terminal-glow"
                 >
-                  {'>'} x.com/donluv
+                  {'>'} x.com/don_luvat
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://farcaster.xyz/don-luv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors terminal-glow"
+                >
+                  {'>'} farcaster.xyz/don-luv
                 </a>
               </li>
               <li>
@@ -123,6 +133,9 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-8 pt-6 border-t border-primary/20 text-center text-sm text-muted-foreground font-mono">
+          <a href="https://www.vecteezy.com/free-vector/white-tech-background">
+            White Tech Background Vectors by Vecteezy
+          </a>
           <p className="terminal-glow">
             © {new Date().getFullYear()} DONLUV_SYSTEM // Built with React + TypeScript + Web3 + 💚
           </p>

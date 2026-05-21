@@ -6,7 +6,7 @@ export const Route = createFileRoute('/projects/pizzadao')({
 
 function PizzaDAOProject() {
   return (
-    <div className="min-h-screen pcb-traces">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-6 mb-8">
